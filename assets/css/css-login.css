@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 30px;
+  background-color: #fff;
+  /* background-image: linear-gradient(#d5d5d5, #eee, #eee); */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url(../img/bgindexreal.svg);
+  background-size: cover;
+}
+
+.bg-card {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background-image: url(../img/svgloginsiswa.png);
+  /* background-image: url(../img/bgisilogin.jpg); */
+  background-size: cover;
+  height: 90vh;
+  margin: 0vh 20vh;
+  padding: 30px 0px;
+}
+.card {
+  /* border: #eee 2px solid; */
+  /* box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.4), */
+  /* 1px 4px 6px rgba(0, 0, 0, 0.1); */
+  border: none;
+  width: 70vh;
+  height: 80vh;
+  /* margin: 0 auto; */
+  margin-left: 60px;
+  float: left;
+  border-radius: 10px;
+  /* padding: 20px; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  background: transparent;
+  /* backdrop-filter: blur(2px); */
+}
+/* .header {
+  background-color: #000;
+  border-radius: 10px;
+} */
+h4 {
+  color: #424762;
+  /* margin-bottom: 20px; */
+}
+
+.judul-login {
+  /* background-color: #fff; */
+  border-radius: 4px;
+  padding: 4px;
+  color: #666f91;
+  /* opacity: 70%; */
+  /* font-weight: 600; */
+  /* font-size: 14pt; */
+  text-shadow: 0 0 8px #fff;
+}
+.judul-card {
+  font-family: "Bagel Fat One", cursive;
+  opacity: 80%;
+  font-size: 14pt;
+  margin-bottom: 20px;
+}
+.header-img {
+  /* border: red 2px solid; */
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.login-form {
+  margin-top: 6px;
+  /* border: red 2px solid; */
+  display: flexbox;
+  align-items: center;
+  width: 45vh;
+}
+.subform {
+  display: flex;
+  margin-bottom: 0px;
+  margin-left: 4px;
+  font-weight: 500;
+  color: #fff;
+  /* border: #000 2px solid; */
+  width: fit-content;
+  padding: 2px 20px;
+  border-radius: 8px 8px 0 0;
+  background-image: linear-gradient(to right, #9f9fd1, #666aa5);
+}
+input {
+  background-image: linear-gradient(to right, #fff, #f4f4f4) !important;
+  opacity: 80%;
+  /* width: 280px !important; */
+  /* border: #9f9fd1 2px solid !important; */
+  width: 100% !important;
+  margin-bottom: 8px;
+  border-radius: 10px;
+}
+
+.password-container {
+  position: relative;
+}
+.password-toggle {
+  position: absolute;
+  right: 20px;
+  top: 70%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.form-select {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.btn-masuk {
+  background-image: linear-gradient(to right, #666f91, #9f9fd1, #666f91);
+  border-radius: 8px;
+  margin: 20px 0px;
+  line-height: 35px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.btn-masuk:hover {
+  background-image: linear-gradient(to right, #424762, #424762);
+  text-shadow: 0 0 6px #fff;
+}
+
+.btn-sebagai {
+  border-radius: 8px;
+  /* padding: 6px 64px; */
+  background-color: #fff;
+  border: #424762 2px solid;
+  color: #424762;
+  opacity: 80%;
+  text-decoration: none;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  line-height: 35px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+.btn-sebagai:hover {
+  background-color: #424762;
+  color: #fff;
+  text-shadow: 0 0 6px #fff;
+  opacity: 100%;
+}
+
+.btn-daftar {
+  background-image: linear-gradient(to left, #b5b5f0, #666f91);
+  border-radius: 8px;
+  margin: 20px 0px;
+  line-height: 35px;
+  /* padding: 4px 30px; */
+  width: 100%;
+  border: none;
+  color: #fff;
+  /* box-shadow: 0 0 5px 2px #6d7793; */
+  transition: all 0.2s ease;
+}
+.btn-daftar:hover {
+  background-image: linear-gradient(to right, #424762, #424762);
+}
+
+.centerline {
+  color: #6d7793;
+  padding: 0 16px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin: 0px;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 2px dashed #b4b4b4;
+  margin: 10px 0px;
+}
+
+.svg-img {
+  position: fixed;
+  top: 18%;
+  right: 18%;
+  max-width: 450px;
+}
+
+.wave-svg {
+  display: none;
+  opacity: 50%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1; /* Set a negative z-index to position it behind other elements */
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .bg-card {
+    /* border: red 2px solid; */
+    background-image: url(../img/responlogin.png);
+    background-size: cover;
+    margin: 0 auto;
+  }
+
+  .card {
+    float: none; /* Membatalkan float */
+    margin: 0 auto; /* Meletakkan elemen di tengah layar */
+    width: 100%;
+  }
+
+  .login-form {
+    width: 300px;
+  }
+
+  /* .judul-login {
+    text-shadow: 0 0 10px white;
+    color: #000 !important;
+  }
+  .subform {
+    text-shadow: 0 0 10px #fff;
+  }
+  img {
+    border: #f4f4f4 2px solid;
+    border-radius: 50px;
+  }
+  body {
+    padding: auto;
+  }
+  .svg-img {
+    margin: 0 auto;
+    width: 100%;
+  } */
+}

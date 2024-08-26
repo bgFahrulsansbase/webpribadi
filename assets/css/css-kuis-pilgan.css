@@ -1,0 +1,301 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* background-image: linear-gradient(#d5d5d5, #6d7793); */
+  color: #444444;
+  height: 100vh;
+}
+.kontenKuis {
+  bottom: 0px;
+  height: 100%;
+  background: #eee;
+  padding-top: 80px;
+}
+#header {
+  /* z-index: 1; */
+  transition: all 0.5s;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  /* background-image: linear-gradient(to right, #eee, #fff); */
+}
+
+#header .kembali-btn {
+  background-color: #666f91;
+  color: #eee;
+  border: #666f91 2px solid;
+  padding: 5px 15px;
+  margin: 22px 0px;
+  margin-left: -60px;
+  border-radius: 30px 2px 30px 2px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+#header button {
+  color: #fff;
+  text-decoration: none;
+}
+#header .kembali-btn:hover {
+  background-color: #515878;
+  color: #fff;
+}
+
+.nav-link .bx {
+  margin-right: 4px; /* Atur jarak antara ikon dan teks di sini */
+}
+.bx {
+  font-size: 20px; /* Ganti ukuran ikon sesuai kebutuhan Anda */
+}
+
+/* Background bg-Kuis */
+.mx-3 {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  border-radius: 15px;
+  background-image: url(../img/bg-gel3.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 15px;
+}
+.card-header {
+  background-color: #515878;
+  color: #fff;
+}
+.card-body {
+  background-color: #fff;
+
+  border: none;
+}
+.timer-soal {
+  background-color: #575d8f !important;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  width: 75px;
+}
+
+/* Soal pilgan */
+.pilihan-jawaban {
+  background-color: #fff;
+  border: #eee 2px solid;
+  color: black;
+  margin: 10px;
+  padding-top: 6px;
+  padding-left: 10px;
+  height: 40px;
+  border-radius: 10px;
+}
+.pilihan-jawaban:hover {
+  border-color: #575d8f;
+}
+.div-soal {
+  height: 58vh;
+  overflow: auto;
+}
+.radio-pilihan-ganda:checked ~ .pilihan-jawaban,
+.btn-nomor-sudah-dijawab,
+.pilihan-jawaban-dipilih {
+  background-color: #575d8f !important;
+  color: white !important;
+}
+.kembali-evaluasi {
+  /* border: red 2px solid; */
+  background-color: #e96565;
+  color: #fff;
+}
+.kembali-evaluasi:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+.lanjut-evaluasi {
+  background-color: #2db42d;
+  color: #fff;
+}
+.lanjut-evaluasi:hover {
+  background-color: green;
+  color: #fff;
+}
+
+/* Nomor soal */
+/* .isi-peta {
+  border: red 2px solid;
+} */
+
+.kotak-soal-evaluasi {
+  width: 18%;
+  padding: 18px 0px;
+  background-color: #eee;
+  color: #444444;
+  font-weight: bold;
+  border: #eee 2px solid;
+  /* border: 2px solid #515878; */
+  border-radius: 4px;
+}
+.kotak-soal-evaluasi:hover {
+  border-color: #666f91 !important;
+}
+.kode-sudah-dijawab {
+  background-color: #515878;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.kode-belum-dijawab {
+  background-color: #eee;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  /* border: 2px solid #a8a8a8; */
+  border-radius: 3px;
+}
+/* btn-selesai */
+.btn_cekJawaban {
+  background-color: #fff;
+  border-radius: 20px;
+  color: #515878;
+  font-size: large;
+  border: 2px solid #666f91;
+  padding: 2px 30px !important;
+  transition: all 0.2s ease;
+  text-align: center; /* Menggunakan text-align: center untuk tombol */
+  margin: auto; /* Menggunakan margin: auto untuk memposisikan tombol di tengah */
+}
+.btn_cekJawaban:hover {
+  background-color: #515878;
+  color: #fff;
+}
+/* #ISI KONTEN CPL */
+.bg-block {
+  background: #fff none repeat scroll 0 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  /* margin-bottom: 20px; */
+  margin-top: 16vh;
+  margin-bottom: 10vh;
+  height: auto;
+  /* transition: all 0.5s ease-in-out 0s; */
+}
+
+p.sisa-wkt {
+  margin-right: 16px; /* border: #d4d4d4 6px double; */
+  margin-bottom: 0px;
+}
+
+.line-sekat {
+  border-radius: 50px;
+  border: #eee 2px solid;
+  margin-bottom: 20px;
+}
+#background-svg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  padding: 0px;
+  width: 100%;
+  opacity: 80%;
+}
+
+/* import css */
+.btn_contoh {
+  background-color: #005eff;
+  border-radius: 10px;
+  border: 2px dashed #005eff;
+  color: white;
+  width: fit-content;
+  padding: 5px;
+}
+.boxKeterangnJWB {
+  border: 1px solid #005eff;
+  border-radius: 3px;
+  padding: 3px 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  color: black;
+  margin-top: -30px;
+}
+
+/* Hilang */
+.blurKonten {
+  filter: blur(3px);
+}
+.sembunyikan {
+  display: none;
+}
+#boxHilang {
+  margin: auto;
+  border: 1px solid #005eff;
+  border-radius: 3px;
+  padding: 3px 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  width: 95%;
+  color: black;
+}
+
+/* box persamaan */
+.boxPenting {
+  border-radius: 10px;
+  border: 2px solid #4b3d67;
+  width: 150px;
+  padding: 10px;
+  margin: auto;
+}
+
+.ulang {
+  border-radius: 10px;
+  width: 150px;
+  border: 2px solid #dc3545;
+  padding: 3px;
+  background: #dc3545;
+  color: white;
+}
+.ulang:hover {
+  background: #a22632;
+  border: 2px solid #a22632;
+  transition: all 0.5s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .bg-block {
+    padding: 10px;
+    margin-top: 12vh;
+  }
+
+  .mx-3 {
+    padding: 8px;
+  }
+  p.sisa-wkt {
+    display: none;
+  }
+  .pilihan-jawaban {
+    background-color: #fff;
+    border: #eee 2px solid;
+    color: black;
+    margin: 10px;
+    padding: 4px;
+    height: auto;
+    border-radius: 10px;
+  }
+  #header .kembali-btn {
+    margin: 22px 0px;
+    margin-left: auto;
+  }
+  #header button {
+    color: #fff;
+    text-decoration: none;
+  }
+  #header .kembali-btn:hover {
+    background-color: #515878;
+    color: #fff;
+  }
+  /* .col-md-9 {
+    border: 2px red solid;
+  } */
+  .ms-2 {
+    /* border: 2px green solid; */
+    margin-left: 0px !important;
+  }
+}

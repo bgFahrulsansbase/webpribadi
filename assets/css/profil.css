@@ -1,0 +1,182 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
+  height: 100vh;
+  /* background-image: url(../img/bg-gel2.svg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bglatar {
+  /* background-color: #fff; */
+  background-image: url(../img/bg-gel3.svg);
+  background-size: cover;
+  padding: 20px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  height: 94vh;
+  width: 200vh;
+  border-radius: 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.bg-card {
+  padding: 0px;
+  height: 78vh;
+  border-radius: 10px;
+  overflow-y: auto;
+  border-top: #eee 3px solid;
+  /* border-bottom: #eee 3px solid; */
+}
+.card {
+  /* margin: 10px; */
+  padding: 0px 20px;
+  /* border-radius: 50px; */
+  border: none;
+}
+
+.kembali-btn {
+  background-color: #666f91;
+  color: #eee;
+  border: #666f91 2px solid;
+  padding: 5px 15px;
+  margin: 6px 0px;
+  border-radius: 25px 4px 30px 4px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.kembali-btn:hover {
+  background-color: #515878;
+  color: #fff;
+}
+.profil {
+  display: inline-flex;
+  background-image: linear-gradient(to right, #fff, #fff);
+  padding: 10px;
+  font-size: larger;
+  /* border: red 2px solid; */
+}
+.profil h4 {
+  margin-left: 20px;
+}
+
+.detail {
+  margin-left: 14px;
+}
+h6 {
+  /* border: #515878 2px solid; */
+  background-color: #515878;
+  padding: 6px 10px;
+  margin-left: 6px;
+  border-radius: 8px;
+  color: #fff;
+}
+.profil img {
+  border-radius: 20px;
+}
+.detail {
+  display: flex;
+}
+.isi-hasil {
+  padding: 10px;
+}
+.isi-hasil p {
+  text-align: justify;
+  font-size: larger;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid #bbb;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  /* background-image: linear-gradient(#c8cdff, #d8e1ff, #c7dbff); */
+  background-image: linear-gradient(#c8cdff, #d8e1ff);
+  color: #000;
+}
+
+.judul {
+  width: 100%;
+}
+.kolom1,
+.kolom2,
+.kolom3,
+.kolom4 {
+  width: 25%;
+}
+.nomor {
+  width: 5%;
+}
+
+.koloma1 {
+  width: 20%;
+}
+.koloma2 {
+  width: 8%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .detail {
+    margin-left: 14px;
+  }
+  h6 {
+    /* border: #515878 2px solid; */
+    font-size: x-small;
+  }
+  #user-nama {
+    /* border: #000 2px solid; */
+    font-size: smaller;
+  }
+  .nama-nisn {
+    /* border: #000 2px solid; */
+    width: 100%;
+  }
+  /* .koloma1 {
+    border: red 2px solid;
+  } */
+  th,
+  td {
+    background-color: #fff;
+  }
+  .nilaikuis {
+    /* border: 2px red solid;  */
+    width: auto;
+  }
+  .bglatar {
+    background-color: #fff;
+    background-image: none;
+    padding: 20px 30px;
+    box-shadow: none;
+    height: 100vh;
+    width: auto;
+    border-radius: 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .bg-card {
+    padding: 0px;
+    height: 90vh;
+    border-radius: 10px;
+    overflow-y: auto;
+
+    border-top: #eee 3px solid;
+    /* border-bottom: #eee 3px solid; */
+  }
+  .card {
+    /* margin: 10px; */
+    padding: 0px;
+    /* border-radius: 50px; */
+    border: none;
+  }
+}

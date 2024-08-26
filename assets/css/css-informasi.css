@@ -1,0 +1,316 @@
+body {
+  /* background-image: linear-gradient(#d5d5d5, #6d7793); */
+  color: #444444;
+  height: 80vh;
+}
+
+#header {
+  z-index: 1;
+  transition: all 0.5s;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  /* background-image: linear-gradient(to right, #eee, #fff); */
+}
+
+.rounded-image:hover {
+  border-radius: 10px;
+  opacity: 100%;
+}
+#header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#header .logo img {
+  padding: 0;
+  margin: 10px 0px;
+  max-height: 60px;
+}
+#header .kembali-btn {
+  background-color: #515878;
+  border: #515878 2px solid;
+  padding: 5px 15px;
+  margin: 22px 0px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+#header button {
+  color: #fff;
+  text-decoration: none;
+}
+#header .kembali-btn:hover {
+  background-color: #666f91;
+  color: #fff;
+}
+.keluar-btn {
+  color: #f08484 !important;
+  background-color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: aliceblue;
+  border: #f08484 2px solid;
+}
+
+.keluar-btn:hover {
+  color: #fff !important;
+  background-color: #eb3838;
+  border: #eb3838 2px solid;
+  /* box-shadow: 0 0 4px 2px #eb3838; */
+  transition: 0.2s;
+}
+.navbar ul {
+  margin: 5px;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  margin-right: 25px; /* Tambahkan margin-right sebesar 10px di sini */
+}
+
+.navbar li:last-child {
+  margin-right: 0; /* Hapus margin-right pada elemen terakhir agar tidak ada ruang ekstra di akhir */
+}
+
+.navbar li a {
+  position: relative;
+  color: #666f9188;
+  font-weight: 500;
+  /* background-color: #fff; */
+  /* border: yellow 1px solid; */
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0px;
+  white-space: nowrap;
+  transition: 0.2s;
+  /* border: #000 2px solid; */
+}
+
+.navbar a:hover,
+.navbar li:hover > a {
+  color: #666f91;
+}
+
+.navbar .active,
+.navbar .active:focus {
+  color: #666f91;
+  border-bottom: #9ca8d3 2px solid;
+}
+
+.nav-link .bx {
+  margin-right: 4px; /* Atur jarak antara ikon dan teks di sini */
+}
+.bx {
+  font-size: 20px; /* Ganti ukuran ikon sesuai kebutuhan Anda */
+}
+
+/* #ISI KONTEN Informasi */
+
+.main-informasi {
+  margin: 110px 130px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+h4 {
+  padding: 5px;
+  font-size: large;
+  border-radius: 50px;
+  color: white;
+  background-color: #373737;
+  text-align: center;
+  width: 15vh;
+  margin: 0px 10px;
+}
+h6 {
+  text-align: left;
+  margin: 10px 30px;
+}
+p {
+  background-color: white;
+  color: #444444;
+  padding: 15px 30px;
+  margin: 0px 12px 0px;
+  text-align: justify;
+}
+
+#background-svg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+  padding: 0px;
+  width: 100%;
+  opacity: 80%;
+  /* pointer-events: none; */
+}
+.nav-materi button {
+  font-weight: bold;
+  padding: 5px 10px;
+  /* margin: 2px !important; */
+  background-image: linear-gradient(to right, #666f91, #424762, #333647);
+  color: #ddd;
+  cursor: pointer;
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 150px;
+  border: #515878 2px solid;
+  border-radius: 10px 10px 0 0 !important;
+  transition: all 0.2s ease;
+}
+.nav-materi button:hover {
+  border: #f6f7f9 2px solid;
+}
+.nav-materi button.active {
+  /* border-bottom: #fff 3px solid; */
+  color: #fff;
+}
+.nav-materi h2 {
+  background-color: white;
+}
+p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  letter-spacing: 0.5px;
+  text-align: justify;
+  margin: 0px;
+}
+.image-container img {
+  border-radius: 10px;
+  width: 400px;
+}
+.zoom-gambar {
+  border: #d4d4d4 2px solid;
+  border-radius: 50px;
+  margin: 6px;
+  /* width: fit-content; */
+  max-width: 300px;
+  padding: 2px 10px;
+  font-size: small;
+  cursor: pointer;
+}
+
+.nav-materi {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #3b3f55;
+  border-radius: 10px 10px 0 0;
+}
+
+.nav-materi .active,
+.nav-materi .active:focus {
+  background-image: linear-gradient(to right, #b0b5c9, #858cab);
+}
+
+#infoApk,
+#petunjukApk,
+#dafpusApk {
+  justify-content: center;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  background-color: white;
+  padding: 5px;
+  height: 65vh;
+  /* Munculkan efek scroll jika konten melebihi 40vh */
+  overflow-y: auto;
+  border-radius: 0px 0px 10px 10px;
+}
+
+#dafpusApk ul li {
+  text-align: justify;
+  margin: 20px;
+}
+/*--------------------------------------------------------------
+# Disable AOS delay on mobile
+--------------------------------------------------------------*/
+.mobile-nav-toggle {
+  color: #222222;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #fff;
+  font-size: 40px;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .main-informasi {
+    margin: 100px 20px;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(9, 9, 9, 0.6);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: none;
+  background-color: whitesmoke;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  /* padding: 10px 20px; */
+  font-size: 15px;
+  color: #222222;
+  background-color: whitesmoke;
+  border-bottom: #e8e8e8 1px solid;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a {
+  color: #6fc0f7;
+  background-color: whitesmoke;
+}

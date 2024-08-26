@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .button {
+      padding: 0.8em 1.7em;
+      background-color: transparent;
+      border-radius: 0.3em;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.5s;
+      font-weight: 400;
+      font-size: 17px;
+      border: 3px solid;
+      font-family: inherit;
+      text-transform: uppercase;
+      color: #0d6efd;
+      z-index: 1;
+    }
+
+    .active {
+      content: "";
+      padding: 0.8em 1.7em;
+      border-radius: 0.3em;
+      position: relative;
+      transition: 0.5s;
+      font-weight: 400;
+      font-size: 17px;
+      border: 3px solid black;
+      font-family: inherit;
+      text-transform: uppercase;
+      color: black;
+      z-index: 1;
+      background-color: #0d6efd;
+    }
+
+    .button::before,
+    .button::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 50px;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      border-radius: 50%;
+      z-index: -1;
+      background-color: #0d6efd;
+      transition: 1s ease;
+    }
+
+    .button::before {
+      top: -1em;
+      left: -1em;
+    }
+
+    .button::after {
+      left: calc(100% + 1em);
+      top: calc(100% + 1em);
+    }
+
+    .button:hover::before,
+    .button:hover::after {
+      height: 410px;
+      width: 410px;
+    }
+
+    .button:hover {
+      color: rgb(10, 25, 30);
+    }
+    /* .button:active {
+    filter: brightness(.8);
+} */
+  </style>
+  <body>
+    <button>tes</button>
+  </body>
+</html>

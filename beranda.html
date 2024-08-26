@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda | Indonesiaku Kaya Raya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ICON -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- CSS File -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/beranda.css" rel="stylesheet" />
+
+    <link rel="icon" type="image/png" href="assets/img/logo/iconwebIKR.svg" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo" title="Logo">
+          <a href="#"
+            ><img
+              src="assets/img/logo/logoIKR.svg"
+              alt="logo"
+              class="img-fluid rounded-image"
+          /></a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a class="nav-link scrollto active" href="#beranda"
+                ><span class="bx bxs-home"></span>Beranda</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="#menu"
+                ><i class="bx bx-menu"></i>Menu Utama</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="#tentang"
+                ><i class="bx bxs-leaf"></i>Informasi</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button id="logoutBtn" class="keluar-btn">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <a> Keluar </a>
+        </button>
+      </div>
+    </header>
+    <!-- Akhir Header -->
+
+    <!-- Beranda -->
+    <section id="beranda">
+      <div class="beranda-container">
+        <div class="bg-hal1">
+          <h5 class="opening-title">
+            Selamat Datang
+            <a href="profil-siswa.html" title="Profil Siswa">
+              <div class="user-nama">
+                <span id="user-nama"></span>
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </a>
+          </h5>
+
+          <!-- <p>Media Pembelajaran Interaktif</p> -->
+          <h2 class="index-judul">INDONESIAKU KAYA RAYA</h2>
+          <p>Ilmu Pengetahuan Alam & Sosial ( Fase C ) Kelas V SD</p>
+          <a href="#menu">
+            <div class="btn-mulai" title="Ayo Mulai!">
+              Mulai Belajar &nbsp;<i
+                class="fa-solid fa-circle-arrow-right pl-2 fa-lg"
+              ></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="padd-section text-center">
+      <div class="container" data-aos="fade-up">
+        <!-- <div class="section-title text-center">
+          <h2>Menu</h2>
+        </div> -->
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-block">
+              <img src="assets/img/logo/cpl-logo.svg" alt="img" />
+              <h4>Capaian Pembelajaran</h4>
+              <p>
+                Berisikan capaian pembelajaran, tujuan pembelajaran dan daftar
+                pustaka.
+              </p>
+              <a href="cpl.html"> <button>Buka</button></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-block">
+              <img src="assets/img/logo/materi-logo.svg" alt="img" />
+              <h4>Materi</h4>
+              <p>
+                Berisikan materi pembelajaran, contoh, latihan soal, kuis dan
+                evaluasi.
+              </p>
+              <a href="topik-a/A-pendahuluan.html"> <button>Buka</button></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-block">
+              <img src="assets/img/logo/info-logo.svg" alt="img" />
+              <h4>Petunjuk Aplikasi</h4>
+              <p>
+                Panduan lengkap untuk menggunakan aplikasi IKR dengan mudah.
+              </p>
+              <a href="petunjuk-aplikasi.html"><button>Buka</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="tentang" class="padd-section text-center">
+      <div class="container" data-aos="fade-up">
+        <!-- <div class="rowi" data-aos="fade-up" data-aos-delay="100"> -->
+        <!-- <div class="col-md-5 col-lg-12"> -->
+        <div class="tentang-block">
+          <h6>Deskripsi Aplikasi</h6>
+          <p>
+            <b>IKR</b> (Indonesiaku Kaya Raya) adalah aplikasi media
+            pembelajaran interaktif berbasis website. Media Pembelajaran ini
+            dibuat untuk memenuhi syarat dalam menyelesaikan program strata-1
+            (S1) Pendidikan komputer dengan judul "Pengembangan Media
+            Pembelajaran Interaktif Berbasis <i>Web</i> pada Materi Indonesiaku
+            Kaya Raya untuk Siswa Kelas V dengan Pendekatan Saintifik".
+          </p>
+        </div>
+
+        <center><h6 class="info">Informasi Pengembang</h6></center>
+
+        <div class="container-info">
+          <div class="isi-info">
+            <p><span class="label">Nama</span>: Fahrul Ikhsan Hidayatullah</p>
+            <p><span class="label">NIM</span>: 1910131210004</p>
+            <p>
+              <span class="label">Dosen Pembimbing I</span>: Dr. Harja Santana
+              Purba, M.Kom
+            </p>
+            <p>
+              <span class="label">Dosen Pembimbing II</span>: Muhammad Hifdzi
+              Adini, S.Kom., M.T
+            </p>
+            <p><span class="label">Program Studi</span>: Pendidikan Komputer</p>
+            <p>
+              <span class="label">Fakultas</span>: Keguruan dan Ilmu Pendidikan
+            </p>
+            <p>
+              <span class="label">Instansi</span>: Universitas Lambung Mangkurat
+            </p>
+            <p>
+              <span class="label">E-mail</span>: 1910131210004@mhs.ulm.ac.id
+            </p>
+
+            <p>
+              <span class="label">Sosial Media</span>:
+              <a href="https://www.instagram.com/2fhrl" target="_blank"
+                ><i class="bx bxl-instagram"></i>2fhrl</a
+              >
+              <a
+                href="https://www.youtube.com/@fahrulikhsanhidayatullah/featured"
+                target="_blank"
+                ><i class="bx bxl-youtube"></i>fahrulikhsanhidayatullah</a
+              >
+            </p>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+      <!-- Footer -->
+      <footer>
+        <p>
+          Copyright &copy; 2023 Fahrul Ikhsan Hidayatullah | Pendidikan
+          Komputer, Universitas Lambung Mangkurat
+        </p>
+      </footer>
+    </section>
+
+    <!-- JS File -->
+    <script src=" https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/beranda.js"></script>
+    <script src="js/db/dataSiswa.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ambil data nama dari localStorage
+        const nama = localStorage.getItem("nama");
+
+        // Periksa apakah data nama ada
+        if (nama) {
+          const namaSpan = document.getElementById("user-nama");
+          namaSpan.textContent = nama; // Memasukkan nama ke dalam elemen span
+        } else {
+          // Tampilkan SweetAlert jika data tidak ditemukan
+          Swal.fire({
+            title: "Perhatian",
+            text: "Silahkan login terlebih dahulu.",
+            icon: "warning",
+            confirmButtonText: "OK",
+          }).then(() => {
+            // Redirect to login page
+            window.location.href = "index.html";
+          });
+        }
+
+        const logoutButton = document.getElementById("logoutBtn");
+
+        logoutButton.addEventListener("click", function () {
+          Swal.fire({
+            title: "Keluar Akun",
+            text: "Anda yakin ingin keluar akun?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonText: "Ya, Keluar",
+            cancelButtonText: "Batal",
+            // confirmButtonColor: "green",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Redirect to login page
+              window.location.href = "index.html";
+
+              // Remove local storage data
+              localStorage.removeItem("nama");
+              localStorage.removeItem("nisn");
+              localStorage.removeItem("kelas");
+              localStorage.removeItem("kuis1Score");
+            }
+          });
+        });
+      });
+    </script>
+    <script>
+      var audio = document.getElementById("backgroundMusic");
+      var audioIcon = document.getElementById("audioIcon");
+
+      function toggleAudio() {
+        if (audio.paused) {
+          audio.play();
+          audioIcon.src = "assets/img/logo/iconwebIKR.svg"; // Ganti ikon menjadi ikon pause saat audio dimulai
+        } else {
+          audio.pause();
+          audioIcon.src = "assets/img/logo/logoIKR.svg"; // Ganti ikon menjadi ikon play saat audio dihentikan
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,501 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+  width: calc(100% - 0px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  text-align: center;
+  height: 80px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to right, #fff, #fff);
+  z-index: 1;
+}
+.user {
+  border: 2px solid #eee;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 18px; /* Sesuaikan dengan jarak dari atas */
+  right: 18px; /* Sesuaikan dengan jarak dari kanan */
+  /* padding: 4px; */
+  border: #fff 2px solid;
+  padding-left: 10px;
+  border-radius: 30px;
+  opacity: 80%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.user:hover {
+  opacity: 100%;
+}
+.user h6 {
+  margin-right: 4px; /* Jarak antara elemen <h6> dan gambar */
+  color: #515878;
+}
+
+/* Gaya untuk gambar logo-user */
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  /* Hapus float:right; */
+  /* margin-left: 0px; Jarak antara elemen <img> dan <h6> */
+}
+.btn {
+  position: fixed;
+  top: 15px;
+  left: 0px;
+  height: 45px;
+  width: 45px;
+  background-color: #3b3f55 !important;
+  border-radius: 20px 0px 30px 0 !important;
+  /* border-left: #c5c5c5 2px solid !important; */
+  cursor: pointer;
+  transition: left 0.4s ease !important;
+  z-index: 2;
+}
+
+.btn.click {
+  left: 250px;
+}
+
+.btn span {
+  color: white;
+  font-size: 28px;
+  margin-left: -5px;
+}
+
+.sidebar.show .logo {
+  width: 192px;
+  height: 110px;
+  margin: 0px 20px;
+  border-radius: 8px;
+  opacity: 90%;
+}
+.logo {
+  width: 50px;
+  opacity: 20%;
+}
+
+.sidebar {
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  left: -250px;
+  /* background: #3b3f55; */
+  background-color: #fff;
+  transition: left 0.4s ease;
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.sidebar.show ~ .main-content {
+  left: 250px;
+  width: calc(100% - 250px);
+}
+
+.sidebar.show {
+  left: 0px;
+}
+nav ul {
+  /* background-image: linear-gradient(#3b3f55, #22242f); */
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  opacity: 95%;
+}
+
+nav ul li {
+  line-height: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a {
+  position: relative;
+  color: #999;
+  text-decoration: none;
+  font-size: 12pt;
+  font-weight: 600;
+  /* letter-spacing: 0.6pt; */
+  padding-left: 50px;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+
+nav ul li a:hover {
+  color: #fff !important;
+  background-color: #515878 !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+nav ul li.active a {
+  color: #363636;
+  border-left-color: #3b3f55;
+}
+
+/* submenu */
+nav ul ul {
+  max-height: 0;
+  overflow: hidden;
+  margin-left: -30px !important;
+  position: static;
+  width: 100%;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+nav ul .topik1-show.show,
+nav ul .topik2-show.show1,
+nav ul .topik3-show.show2 {
+  display: block;
+  max-height: 1000px; /* Adjust this value based on your content height */
+}
+
+nav ul ul li {
+  line-height: 42px;
+  /* border: 2px white solid; */
+}
+
+nav ul ul li a {
+  font-size: smaller;
+  color: #999;
+  background-color: #eee;
+  padding-left: 50px;
+  border-radius: 4px;
+  /* border: 2px white solid; */
+}
+
+nav ul li.active ul li a {
+  /* color: #e6e6e6; */
+  background: #eee;
+  border-left-color: transparent;
+}
+
+nav ul ul li a:hover {
+  color: #fff !important;
+  background-color: #515878 !important;
+}
+
+nav ul ul li a.active {
+  color: #fff !important;
+  background-image: linear-gradient(#858cab, #515878) !important;
+}
+
+nav ul li a span {
+  position: absolute;
+  top: 50%;
+  right: 35px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  transition: transform 0.4s;
+}
+
+nav ul li a span.rotate {
+  transform: translateY(-50%) rotate(-180deg);
+  color: #858cab;
+}
+
+li {
+  position: relative; /* Membuat posisi relatif untuk menampung ikon */
+}
+
+/* Mengatur ikon kecuali bx-caret-down dan bx-menu */
+.bx:not(.bx-caret-down):not(.bx-menu):not(.bx-refresh):not(.bx-paper-plane):not(
+    .bxs-pin
+  ):not(.bx-right-arrow) {
+  position: absolute; /* Mengatur posisi ikon */
+  top: 50%; /* Menyusun ikon secara vertikal di tengah */
+  left: 20px; /* Jarak antara ikon dan kiri elemen <li> */
+  transform: translateY(-50%); /* Menyusun ikon secara vertikal di tengah */
+  font-size: 18px; /* Mengatur ukuran ikon */
+}
+
+.keluar-btn a {
+  background-color: #eee;
+  width: 85%;
+  border-radius: 8px;
+  color: #22242f;
+}
+.keluar-btn a:hover {
+  background-color: #ff0000e5 !important;
+  border-left: none;
+}
+
+.main-content {
+  position: relative;
+  background-color: #eee;
+  padding-top: 15vh;
+  left: 0px;
+  transition: all 0.4s ease;
+  width: calc(100% - 0px);
+  height: 100vh;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  /* padding-top: -50px !important; */
+  z-index: 0;
+}
+
+.bglatar {
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-image: url(../img/bg-gel2.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.isikonten {
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  /* margin-top: 20px; */
+  height: 74vh;
+  margin: 10px;
+  background-color: #fff;
+}
+.kontenawal {
+  border-radius: 10px;
+  /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7); */
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  justify-content: space-between; /* Mengatur elemen-elemen agar sejajar ke kiri dan ke kanan */
+}
+.petunjuk-kuis,
+.data-siswa {
+  flex-basis: calc(
+    50% - 10px
+  ); /* Setengah lebar container dengan padding 10px */
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(#858cab, #515878);
+  color: #eee;
+}
+
+.data-siswa {
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.petunjuk-kuis h5 {
+  background-color: #515878;
+  padding: 6px;
+  border-radius: 10px;
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+}
+.petunjuk-kuis ol li {
+  margin: 8px;
+  margin-right: 20px;
+  text-align: justify;
+  font-size: large;
+}
+.data-siswa p {
+  padding: 0px 20px;
+  /* border: #008000 2px solid; */
+  margin: 6px;
+}
+/* CSS untuk .isi-data-siswa */
+.isi-data-siswa {
+  border: 2px white dashed;
+  min-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* CSS untuk .btn-mulaikuis */
+.btn-mulaikuis {
+  background-color: #fff;
+  border-radius: 8px;
+  color: #515878;
+  font-size: large;
+  border: 2px solid #666f91;
+  padding: 6px 25px !important;
+  margin-left: 20px;
+  transition: all 0.2s ease;
+}
+
+.btn-mulaikuis:hover {
+  background-color: #515878;
+  color: #fff;
+}
+
+.card-hasil h6 {
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: center;
+  background-color: #858cab;
+  padding: 8px;
+  font-size: 14pt;
+  color: #fff;
+}
+.text-center {
+  padding: 20px;
+}
+h5 {
+  background-color: #858cab;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px 8px 0 0 !important;
+  margin: 0px -20px;
+  margin-top: -20px !important;
+}
+.btn-hasil-kuis {
+  background-color: #3b3f55;
+  display: flex;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: -25px;
+}
+.btn-hasil-kuis button {
+  border: none;
+  border-radius: 8px;
+  padding: 4px 20px;
+  transition: all 0.2s ease;
+}
+.btn-hasil-kuis button:hover {
+  background-color: #858cab;
+  color: #fff;
+}
+.btn-kuis {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.btn-kuis button {
+  text-decoration: none;
+  background-color: #01a001;
+  color: white;
+  border-radius: 30px;
+  padding: 8px 30px;
+  border: none;
+  transition: 0.2s ease;
+}
+.btn-kuis button:hover {
+  color: white;
+  background-color: #008000;
+}
+
+.footer {
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  /* border: #002044 2px solid; */
+  margin-top: 6px;
+  padding: 4px;
+}
+.footer button {
+  padding: 4px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #eee;
+}
+.footer button:hover {
+  background-color: #858cab;
+  color: #fff;
+}
+.footer button.active {
+  background-color: #858cab;
+  color: #fff;
+}
+
+.card-body-ketLulus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Tambahkan properti berikut untuk membuat konten berada di tengah secara horizontal dan vertikal */
+  height: 100%; /* Menyesuaikan tinggi kontainer */
+}
+
+.card-body-ketLulus .text-display p {
+  width: fit-content;
+  border-radius: 6px;
+  font-size: large;
+  padding: 6px 100px; /* Atur padding sesuai kebutuhan */
+  background-image: linear-gradient(to right, #00c9a7, #0ec5a7);
+  color: #fff; /* Atur warna teks */
+  text-align: center; /* Atur teks ke tengah secara horizontal */
+}
+
+.card-body-ketTDKLulus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Tambahkan properti berikut untuk membuat konten berada di tengah secara horizontal dan vertikal */
+  height: 100%; /* Menyesuaikan tinggi kontainer */
+}
+
+.card-body-ketTDKLulus .text-display p {
+  width: fit-content;
+  border-radius: 6px;
+  font-size: large;
+  /* margin: 0px; */
+  padding: 6px 100px; /* Atur padding sesuai kebutuhan */
+  background-image: linear-gradient(to right, #ff0000, #e40000);
+  color: #fff; /* Atur warna teks */
+  text-align: center; /* Atur teks ke tengah secara horizontal */
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .bglatar {
+    margin-top: -4vh;
+    padding: 20px;
+    height: auto;
+  }
+  .isikonten {
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    /* margin-top: 20px; */
+    height: auto;
+    margin: 10px;
+    background-color: #fff;
+    /* justify-content: space-between; Mengatur elemen-elemen agar sejajar ke kiri dan ke kanan */
+  }
+
+  .card-body-ketLulus .text-display p {
+    width: fit-content;
+    border-radius: 6px;
+    font-size: small;
+    padding: 6px; /* Atur padding sesuai kebutuhan */
+  }
+
+  .card-body-ketTDKLulus .text-display p {
+    width: fit-content;
+    border-radius: 6px;
+    font-size: small;
+    /* margin: 0px; */
+    padding: 6px; /* Atur padding sesuai kebutuhan */
+  }
+  .card-hasil {
+    height: 78vh;
+  }
+  .btn-hasil-kuis {
+    padding: 10px;
+    margin-top: 0px;
+  }
+}
