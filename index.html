@@ -89,7 +89,7 @@
       </div>
 
       <!-- Elemen Audio -->
-      <audio id="background-audio" loop>
+      <audio id="background-audio" autoplay loop>
         <source src="assets/audio/sonderpiano.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
@@ -256,9 +256,6 @@
         var audio = document.getElementById("background-audio");
         var audioIcon = document.getElementById("audio-icon");
 
-        // Mulai otomatis saat halaman dibuka
-        audio.play();
-
         // Mute/Unmute saat ikon diklik
         document
           .getElementById("audio-control")
@@ -273,6 +270,27 @@
               audioIcon.classList.add("bi-volume-mute");
             }
           });
+
+        // Mulai audio setelah interaksi pengguna
+        document.addEventListener(
+          "click",
+          function () {
+            if (audio.paused) {
+              audio.play();
+            }
+          },
+          { once: true }
+        );
+
+        document.addEventListener(
+          "scroll",
+          function () {
+            if (audio.paused) {
+              audio.play();
+            }
+          },
+          { once: true }
+        );
       });
     </script>
   </body>
