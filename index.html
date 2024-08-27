@@ -1,470 +1,267 @@
-@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
-body {
-  background-color: #000 !important;
-  /* background-image: linear-gradient(to right, #f4f4f4, #fff, #fff, #fff); */
-  /* color: #005eff; */
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahrul Ikhsan Hidayatullah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ICON -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-#audio-control {
-  cursor: pointer;
-  font-size: 24px;
-  color: white;
-}
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-/* Header */
-.bx {
-  margin-right: 4px;
-}
-.bi {
-  margin-top: -6px;
-  margin-right: 4px;
-}
-#header {
-  z-index: 1;
-  transition: all 0.5s;
-  background: transparent;
-  backdrop-filter: blur(2px);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-  height: 10vh;
-  /* background-image: linear-gradient(to right, #eee, #fff); */
-}
-#header #logo h1 {
-  color: #505050;
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin: 0;
-}
+    <!-- CSS File -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/beranda.css" rel="stylesheet" />
 
-#header .logo img {
-  padding: 0;
-  margin: 10px 0px;
-  max-height: 60px;
-}
+    <link rel="icon" type="image/png" href="assets/img/pphalf.png" />
 
-.keluar-btn {
-  padding: 5px 15px;
-  border-radius: 8px;
-  background-color: #000;
-  color: aliceblue;
-  border: none;
-}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <!-- Konten lainnya -->
 
-.keluar-btn:hover {
-  color: #fff !important;
-  background-color: #eb3838;
+        <!-- Ikon Mute/Unmute -->
+        <div id="audio-control">
+          <i id="audio-icon" class="bi bi-volume-up"></i>
+        </div>
 
-  transition: 0.2s;
-}
-/* NavBar */
-.navbar {
-  padding: 0;
-}
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a class="nav-link scrollto active" href="#beranda">
+                <span class="bx bxs-home"></span>Home
+              </a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="#menu">
+                <i class="bx bxs-leaf"></i>Portofolio</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="#tentang">
+                <i class="bi bi-person-lines-fill"></i>
+                Profile</a
+              >
+            </li>
+          </ul>
+        </nav>
 
-.navbar ul {
-  margin: 5px;
-  padding: 0;
-  display: flex;
-  list-style: none;
-  align-items: center;
-}
+        <button id="logoutBtn" class="keluar-btn">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <a> Keluar </a>
+        </button>
+      </div>
 
-.navbar li {
-  margin-right: 25px; /* Tambahkan margin-right sebesar 10px di sini */
-}
+      <!-- Elemen Audio -->
+      <audio id="background-audio" loop>
+        <source src="assets/audio/sonderpiano.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </header>
 
-.navbar li:last-child {
-  margin-right: 0; /* Hapus margin-right pada elemen terakhir agar tidak ada ruang ekstra di akhir */
-}
+    <!-- Akhir Header -->
 
-.navbar li a {
-  position: relative;
-  color: #f4f4f4;
-  font-weight: 500;
-  /* background-color: #fff; */
-  /* border: yellow 1px solid; */
-}
+    <!-- Beranda -->
+    <section id="beranda">
+      <div class="beranda-container">
+        <div class="bg-hal1">
+          <h1 style="font-weight: bold; color: grey">Hello!</h1>
+          <!-- <p>Media Pembelajaran Interaktif</p> -->
+          <h2 class="index-judul">FAHRUL IKHSAN HIDAYATULLAH</h2>
+          <p>Front-End Developer, Graphic Designer.</p>
+          <div class="bgmenu">
+            <a href="#menu">
+              <div class="btn-mulai" title="">See more</div>
+            </a>
+            <a href="#tentang">
+              <div class="btn-mulai" title="">About me</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-.navbar a,
-.navbar a:focus {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0px;
-  white-space: nowrap;
-  transition: 0.2s;
-  /* border: #000 2px solid; */
-}
+    <!-- Menu -->
+    <section id="menu" class="padd-section text-center">
+      <div class="container" data-aos="fade-up">
+        <!-- <div class="section-title text-center">
+          <h2>Menu</h2>
+        </div> -->
+      </div>
 
-.navbar a:hover,
-.navbar li:hover > a {
-  color: #eec96b;
-  text-shadow: 0 0 8px #ffff00e6;
-}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-block">
+              <img src="assets/img/logo/cpl-logo.svg" alt="img" />
+              <h4>Coming soon</h4>
 
-.navbar .active,
-.navbar .active:focus {
-  color: #dfb64e;
-  border-bottom: #dfb64e 2px solid;
-}
+              <a href="#menu"> <button>Buka</button></a>
+            </div>
+          </div>
 
-/* Beranda*/
-#beranda {
-  width: 100%;
-  height: 650px;
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-block">
+              <img src="assets/img/logo/materi-logo.svg" alt="img" />
+              <h4>Coming soon</h4>
 
-  position: relative;
+              <a href="#menu"> <button>Buka</button></a>
+            </div>
+          </div>
 
-  /* background-color: white; */
-}
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-block">
+              <img src="assets/img/logo/info-logo.svg" alt="img" />
+              <h4>Coming soon</h4>
 
-.beranda-container {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: left;
-  flex-direction: column;
-  text-align: center;
-  background-image: url(../img/bghome.jpg);
-  background-size: cover;
-}
-.bg-hal1 {
-  padding-left: 20vh;
-  text-align: left;
-  max-width: 800px;
-  /* border: #000 2px solid; */
-}
+              <a href="#menu"><button>Buka</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-.bg-hal1 h5.opening-title,
-.bg-hal1 .user-nama {
-  display: inline-block;
-}
+    <!-- Tentang -->
+    <section id="tentang" class="padd-section text-center">
+      <div class="container" data-aos="fade-up">
+        <div class="aboutme">
+          <br />
+          <h1>Fahrul Ikhsan Hidayatullah</h1>
+          <p><q>Laa Tahzan</q></p>
+        </div>
+      </div>
+    </section>
+    <!-- JS File -->
+    <script src=" https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/beranda.js"></script>
+    <script src="js/db/dataSiswa.js"></script>
 
-.bg-hal1 p {
-  margin-bottom: 25px;
-  color: #f4f4f4;
-}
-.bgmenu {
-  /* border: white 2px solid; */
-  display: flex;
-  gap: 10px; /* Menambahkan jarak antar elemen */
-}
-.btn-mulai {
-  /* align-items: center; Menengahkan secara vertikal */
-  border: none;
-  /* background-image: linear-gradient(to right, #2d3039, #848faf); */
-  border-radius: 30px;
-  border: #b3b3b3 2px solid;
-  /* box-shadow: 0 2px 4px rgba(255, 255, 255, 0.6);
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); */
-  text-decoration: none;
-  padding: 6px 25px;
-  color: #f0f0f0;
-  font-size: large;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  width: fit-content;
-}
-.btn-mulai:hover {
-  background-image: linear-gradient(to right, #ebcc66, rgb(110, 83, 25));
-  box-shadow: inset 0px 2px 4px rgb(0, 0, 0, 0.5);
-  text-shadow: 0 0 2px rgb(255, 255, 255, 0.9);
-  color: #fff;
-  transform: scale(0.98);
-}
-a {
-  text-decoration: none;
-}
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ambil data nama dari localStorage
+        const nama = localStorage.getItem("nama");
 
-.user-nama {
-  width: fit-content;
-  color: #374266;
-  text-shadow: 0 0px 4px #fff;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(#fafafa #fff, #f4f4f4);
-  padding: 6px 16px;
-  border: #fff 2px solid;
-  border-radius: 20px;
-  /* cursor: pointer; */
-  transition: all 0.2s ease;
-}
+        // Periksa apakah data nama ada
+        if (nama) {
+          const namaSpan = document.getElementById("user-nama");
+          namaSpan.textContent = nama; // Memasukkan nama ke dalam elemen span
+        } else {
+          // Tampilkan SweetAlert jika data tidak ditemukan
+          Swal.fire({
+            title: "Perhatian",
+            text: "Silahkan login terlebih dahulu.",
+            icon: "warning",
+            confirmButtonText: "OK",
+          }).then(() => {
+            // Redirect to login page
+            window.location.href = "index.html";
+          });
+        }
 
-.user-nama:hover {
-  /* transform: translateY(-2px); */
-  background-image: linear-gradient(#eee, #fff, #f4f4f4);
-  box-shadow: 0px 0px 4px rgb(173, 187, 250);
-  transform: scale(0.98);
-}
+        const logoutButton = document.getElementById("logoutBtn");
 
-/* MULAI BELAJAR*/
+        logoutButton.addEventListener("click", function () {
+          Swal.fire({
+            title: "Keluar Akun",
+            text: "Anda yakin ingin keluar akun?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonText: "Ya, Keluar",
+            cancelButtonText: "Batal",
+            // confirmButtonColor: "green",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Redirect to login page
+              window.location.href = "index.html";
 
-.index-judul {
-  /* letter-spacing: 0.1rem; */
-  /* font-family: "Bagel Fat One", cursive; */
-  color: #dfb64e;
-  /* text-shadow: 0 0 10px rgb(255, 255, 255); */
-}
+              // Remove local storage data
+              localStorage.removeItem("nama");
+              localStorage.removeItem("nisn");
+              localStorage.removeItem("kelas");
+              localStorage.removeItem("kuis1Score");
+            }
+          });
+        });
+      });
+    </script>
+    <script>
+      var audio = document.getElementById("backgroundMusic");
+      var audioIcon = document.getElementById("audioIcon");
 
-#beranda img {
-  max-width: 100%;
-  margin-bottom: 10px;
-}
+      function toggleAudio() {
+        if (audio.paused) {
+          audio.play();
+          audioIcon.src = "assets/img/logo/iconwebIKR.svg"; // Ganti ikon menjadi ikon pause saat audio dimulai
+        } else {
+          audio.pause();
+          audioIcon.src = "assets/img/logo/logoIKR.svg"; // Ganti ikon menjadi ikon play saat audio dihentikan
+        }
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var audio = document.getElementById("background-audio");
+        var audioIcon = document.getElementById("audio-icon");
 
-.svg-img {
-  position: fixed;
-  top: 0%;
-  right: 0%;
-  height: 100vh;
-  /* width: 100vh; */
-  /* margin-right: -16vh; */
-  z-index: -1;
-}
+        // Mulai otomatis saat halaman dibuka
+        audio.play();
 
-/* Menu */
-#menu {
-  display: inline-block;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(../img/bghome2.jpg);
-  padding: 160px 0;
-  justify-items: center;
-  /* background-image: linear-gradient(#eee, #fff, #fff); */
-}
-
-#menu .feature-block {
-  height: 340px;
-  border-radius: 20px;
-  padding: 20px;
-  color: #f0f0f0;
-  user-select: none;
-  background: transparent;
-  backdrop-filter: blur(6px);
-  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.1);
-  transition: all 0s ease;
-}
-
-.feature-block p {
-  text-transform: none;
-}
-.feature-block button {
-  border-radius: 30px;
-  /* border: transparent; */
-  border: #9ba7c7 1px solid;
-  width: 36%;
-  color: #eee;
-  font-weight: 600;
-  background-color: #374266;
-  padding: 6px;
-  transition: all 0.2s ease;
-}
-.feature-block button:hover {
-  box-shadow: 0 0 10px #fff;
-  text-shadow: 0 0 8px #667fc4;
-}
-.row {
-  /* background-image: url(../img/bghome2.jpg); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 30px;
-  border-radius: 30px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  /* margin-top: 0px; */
-  /* background: transparent; */
-  /* backdrop-filter: blur(4px); */
-}
-#menu .row .feature-block:hover {
-  color: #fff;
-  background-image: url(../img/bghome2.jpg);
-  box-shadow: 0px 4px 20px rgb(173, 187, 250);
-  text-shadow: 0 0 4px rgb(173, 187, 250);
-  border: solid #9ca8d3 1px;
-  transform: scale(1.04);
-}
-#menu .feature-block img {
-  height: 140px;
-  margin-bottom: 20px;
-  width: 220px;
-}
-#menu .feature-block:hover {
-  transition: all 0.2s ease-in-out;
-}
-
-#menu .row a {
-  /* color: #005eff; */
-  text-decoration: none;
-  text-transform: capitalize;
-  transition: 0.3s;
-}
-
-/* Tentang */
-#tentang {
-  display: inline-block;
-  padding-top: 70px;
-  /* margin-bottom: 0px; */
-  background-image: url(../img/bghome3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 650px;
-}
-.aboutme {
-  /* border: white 2px solid; */
-  height: 80vh;
-}
-.aboutme h1,
-h2,
-h3 {
-  color: #fefefe;
-}
-.aboutme p {
-  color: #dfb64e;
-}
-h6 {
-  /* border: #000 2px solid; */
-  border-radius: 8px 8px 0 0;
-  background-color: #666f91;
-  /* text-shadow: 0 0 10px #fff; */
-  color: #fff;
-  padding: 8px 0px;
-  margin: 0;
-}
-
-.label {
-  display: inline-block;
-  width: 160px;
-  margin-right: 10px;
-}
-.sosmed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: #000 solid 2px;
-  margin: 0;
-}
-.bxl-instagram {
-  text-decoration: none;
-  color: #fff;
-  background-image: linear-gradient(purple, pink);
-  padding: 2px;
-  border-radius: 6px;
-}
-.bxl-youtube {
-  text-decoration: none;
-  color: #fff;
-  background-image: linear-gradient(red, #d10023);
-  padding: 2px;
-  border-radius: 6px;
-}
-.bxl-instagram,
-.bxl-youtube {
-  font-size: 20px !important;
-}
-
-/* Footer */
-footer {
-  color: #dfdfdf;
-  background: #3b4157;
-  /* margin-top: -30px; */
-  text-align: center;
-  padding: 20px;
-  /* border: red 2px solid; */
-}
-footer p {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-  font-size: 14px;
-  letter-spacing: 0;
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .keluar-btn a {
-    display: none;
-  }
-  .beranda-container {
-    background-image: url(../img/bgres1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-  }
-  .bg-hal1 {
-    padding-left: 10px;
-    padding: 20px;
-    max-width: 350px;
-    /* border: 2px red solid; */
-    margin: 0 auto;
-    /* background-color: #fff; */
-    border-radius: 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  .opening-title {
-    /* border: #000 2px solid; */
-    font-size: small;
-    margin: 15px 0px;
-  }
-  /* #beranda .beranda-container {
-    background-image: url(../img/bg-gel3.svg);
-    background-size: cover;
-  } */
-  #beranda p {
-    font-size: small;
-  }
-  #beranda .index-judul {
-    font-size: 30pt;
-  }
-  #header ul li {
-    display: none;
-  }
-  #menu {
-    /* height: 100%; */
-
-    background-image: url(../img/bgres1.jpg);
-    background-size: cover;
-    /* display: none; */
-  }
-  #menu .feature-block {
-    /* border: yellow 2px solid; */
-    margin-top: 10px;
-    padding: 10px;
-    background-size: auto;
-  }
-  #menu .feature-block p {
-    /* border: red 2px solid; */
-    opacity: 60%;
-    line-height: 20px;
-  }
-  #menu .row {
-    /* background-image: url(../img/responmenu.svg); */
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  #tentang {
-    height: max-content;
-  }
-  .tentang-block p {
-    /* border: #000 2px solid; */
-    /* margin: 0px !important; */
-    padding: 15px !important;
-    opacity: 60%;
-  }
-  .isi-info {
-    /* border: red 2px solid; */
-    padding: 10px;
-    font-size: small;
-  }
-  .info {
-    /* border: #000 2px solid; */
-    border-radius: 8px 8px 0 0;
-    background-color: #666f91;
-    /* text-shadow: 0 0 10px #fff; */
-    width: auto;
-    margin: 0px 10px;
-  }
-}
+        // Mute/Unmute saat ikon diklik
+        document
+          .getElementById("audio-control")
+          .addEventListener("click", function () {
+            if (audio.paused) {
+              audio.play();
+              audioIcon.classList.remove("bi-volume-mute");
+              audioIcon.classList.add("bi-volume-up");
+            } else {
+              audio.pause();
+              audioIcon.classList.remove("bi-volume-up");
+              audioIcon.classList.add("bi-volume-mute");
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
