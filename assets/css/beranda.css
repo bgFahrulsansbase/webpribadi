@@ -237,9 +237,9 @@ a {
 }
 
 #menu .feature-block {
+  padding-top: 110px;
   height: 340px;
   border-radius: 20px;
-  padding: 20px;
   color: #f0f0f0;
   user-select: none;
   background: transparent;
@@ -304,7 +304,7 @@ a {
 /* Tentang */
 #tentang {
   display: inline-block;
-  padding-top: 70px;
+
   /* margin-bottom: 0px; */
   background-image: url(../img/bghome3.jpg);
   background-size: cover;
@@ -313,8 +313,15 @@ a {
   height: 650px;
 }
 .aboutme {
+  margin-top: 15vh;
+  margin-bottom: 4vh;
   /* border: white 2px solid; */
   height: 80vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 .aboutme h1,
 h2,
@@ -323,6 +330,44 @@ h3 {
 }
 .aboutme p {
   color: #dfb64e;
+}
+.menu-tombol {
+  /* border: 2px solid white; */
+
+  height: auto;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.menu-tombol button {
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 40px;
+  margin-right: 20px;
+  justify-self: center;
+}
+.menu-tombol button:hover {
+  box-shadow: 0px 0px 8px white;
+  /* width: 60vh; */
+  letter-spacing: 0.1em;
+  transition: all 0.2s;
+}
+.instagram button {
+  background-image: linear-gradient(
+    -150deg,
+    #4f5bd5,
+    #962fbf,
+    #962fbf,
+    #d62976,
+    #fa7e1e,
+    #feda75
+  );
+}
+.youtube button {
+  background-image: linear-gradient(#ff0000, #8a0000);
 }
 h6 {
   /* border: #000 2px solid; */
