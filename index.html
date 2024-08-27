@@ -174,71 +174,7 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
-    <script src="assets/js/beranda.js"></script>
-    <script src="js/db/dataSiswa.js"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Ambil data nama dari localStorage
-        const nama = localStorage.getItem("nama");
-
-        // Periksa apakah data nama ada
-        if (nama) {
-          const namaSpan = document.getElementById("user-nama");
-          namaSpan.textContent = nama; // Memasukkan nama ke dalam elemen span
-        } else {
-          // Tampilkan SweetAlert jika data tidak ditemukan
-          Swal.fire({
-            title: "Perhatian",
-            text: "Silahkan login terlebih dahulu.",
-            icon: "warning",
-            confirmButtonText: "OK",
-          }).then(() => {
-            // Redirect to login page
-            window.location.href = "index.html";
-          });
-        }
-
-        const logoutButton = document.getElementById("logoutBtn");
-
-        logoutButton.addEventListener("click", function () {
-          Swal.fire({
-            title: "Keluar Akun",
-            text: "Anda yakin ingin keluar akun?",
-            icon: "question",
-            showCancelButton: true,
-            confirmButtonText: "Ya, Keluar",
-            cancelButtonText: "Batal",
-            // confirmButtonColor: "green",
-          }).then((result) => {
-            if (result.isConfirmed) {
-              // Redirect to login page
-              window.location.href = "index.html";
-
-              // Remove local storage data
-              localStorage.removeItem("nama");
-              localStorage.removeItem("nisn");
-              localStorage.removeItem("kelas");
-              localStorage.removeItem("kuis1Score");
-            }
-          });
-        });
-      });
-    </script>
-    <script>
-      var audio = document.getElementById("backgroundMusic");
-      var audioIcon = document.getElementById("audioIcon");
-
-      function toggleAudio() {
-        if (audio.paused) {
-          audio.play();
-          audioIcon.src = "assets/img/logo/iconwebIKR.svg"; // Ganti ikon menjadi ikon pause saat audio dimulai
-        } else {
-          audio.pause();
-          audioIcon.src = "assets/img/logo/logoIKR.svg"; // Ganti ikon menjadi ikon play saat audio dihentikan
-        }
-      }
-    </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var audio = document.getElementById("background-audio");
