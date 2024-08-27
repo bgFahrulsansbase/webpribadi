@@ -4,20 +4,11 @@ body {
   /* background-image: linear-gradient(to right, #f4f4f4, #fff, #fff, #fff); */
   /* color: #005eff; */
 }
-.audio-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
+
+#audio-control {
   cursor: pointer;
-}
-
-.audio-btn i {
-  color: #fff;
-}
-
-.audio-btn:hover i {
-  color: #f0f0f0;
+  font-size: 24px;
+  color: white;
 }
 
 /* Header */
