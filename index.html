@@ -46,9 +46,10 @@
     />
     <link href="assets/css/beranda.css" rel="stylesheet" />
 
-    <link rel="icon" type="image/png" href="assets/img/pphalf.png" />
+    <link rel="icon" type="image/png" href="assets/img/logoulm.png" />
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   </head>
   <body>
     <!-- Header -->
@@ -116,6 +117,7 @@
               <div class="btn-mulai" title="">About me</div>
             </a>
           </div>
+          <div id="map"></div>
         </div>
       </div>
     </section>
@@ -162,8 +164,6 @@
       <div class="container" data-aos="fade-up">
         <div class="aboutme">
           <h1>Fahrul Ikhsan Hidayatullah</h1>
-
-          <p>===</p>
 
           <div class="menu-tombol">
             <div class="instagram">
@@ -307,6 +307,21 @@
           { once: true }
         );
       });
+    </script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      // Membuat peta baru dan mengatur pusatnya di Indonesia
+      var map = L.map("map").setView([-2.5, 118.0], 4); // Koordinat pusat Indonesia
+
+      // Menggunakan tile layer dari OpenStreetMap
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      // Menambahkan marker di Indonesia
+      var marker = L.marker([-2.5, 118.0]).addTo(map);
+      marker.bindPopup("<b>Indonesia</b><br>").openPopup();
     </script>
   </body>
 </html>
