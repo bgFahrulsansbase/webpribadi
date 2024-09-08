@@ -134,6 +134,7 @@ body {
 }
 .bg-hal1 {
   padding-left: 20vh;
+  padding-top: 16vh;
   text-align: left;
   max-width: 800px;
   /* border: #000 2px solid; */
@@ -260,12 +261,13 @@ a {
   transform: scale(1.05);
 }
 .kotakmn img {
-  width: 100px;
-  height: auto;
+  width: auto;
+  height: 100px;
   margin: 10px;
 }
 
-.kotakmn h4 {
+.kotakmn h4,
+h6 {
   margin: 10px 0;
   color: #fff;
 }
@@ -374,17 +376,8 @@ h3 {
   border: 4px solid #d39d13;
   border-radius: 10px;
   margin-top: 40px;
-  height: 100px; /* Tinggi peta */
-  width: 100%; /* Lebar penuh peta */
-}
-h6 {
-  /* border: #000 2px solid; */
-  border-radius: 8px 8px 0 0;
-  background-color: #666f91;
-  /* text-shadow: 0 0 10px #fff; */
-  color: #fff;
-  padding: 8px 0px;
-  margin: 0;
+  height: 200px; /* Tinggi peta */
+  width: 80%; /* Lebar penuh peta */
 }
 
 .label {
@@ -463,8 +456,7 @@ h6 {
     height: 100%;
   }
   .bg-hal1 {
-    padding-left: 10px;
-    padding: 20px;
+    padding: 160px 20px 20px 20px;
     max-width: 350px;
     /* border: 2px red solid; */
     margin: 0 auto;
@@ -533,4 +525,7 @@ h6 {
     width: auto;
     margin: 0px 10px;
   }
+}
+#map {
+  width: 100%;
 }
