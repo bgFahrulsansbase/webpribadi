@@ -345,14 +345,13 @@ h3 {
   color: #fff;
   border: none;
   border-radius: 10px;
-  padding: 20px 40px;
+  padding: 10px 40px;
   margin-right: 20px;
+  margin-top: 30px;
   justify-self: center;
 }
 .menu-tombol button:hover {
   box-shadow: 0px 0px 8px white;
-  /* width: 60vh; */
-  letter-spacing: 0.1em;
   transition: all 0.2s;
 }
 .instagram button {
@@ -365,9 +364,18 @@ h3 {
     #fa7e1e,
     #feda75
   );
+  border: 2px solid #fff;
 }
 .youtube button {
   background-image: linear-gradient(#ff0000, #8a0000);
+  border: 2px solid #fff;
+}
+#map {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+  height: 100px; /* Tinggi peta */
+  width: 100%; /* Lebar penuh peta */
 }
 h6 {
   /* border: #000 2px solid; */
@@ -462,9 +470,6 @@ footer p {
   }
   #beranda .index-judul {
     font-size: 30pt;
-  }
-  #header ul li {
-    display: none;
   }
   #menu {
     /* height: 100%; */
