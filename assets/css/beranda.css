@@ -241,47 +241,101 @@ a {
   scroll-snap-type: x mandatory;
   gap: 20px; /* Jarak antar elemen */
   margin: 20px;
-  padding: 10px;
+  padding: 20px;
 }
 
-.kotakmn {
+.kotakmn,
+.kotakmn2,
+.kotakmn3,
+.kotakmn4,
+.kotakmn5 {
   scroll-snap-align: start;
-  width: 300px; /* Lebar minimal agar elemen berjajar ke samping */
+  width: 300px;
   height: 300px;
-  background: transparent;
-  backdrop-filter: blur(4px);
-  box-shadow: 0px 0px 10px rgb(255, 255, 255, 0.6);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
   border-radius: 8px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: 0.3s ease-in-out all;
   padding: 20px;
-  flex-shrink: 0; /* Mencegah elemen mengecil terlalu kecil */
+  flex-shrink: 0;
+}
+.kotakmn {
+  background-image: url(../img/bwulm.jpg);
 }
 .kotakmn:hover {
+  background-image: url(../img/bgulm.jpg);
   transform: scale(1.05);
 }
-.kotakmn img {
+.kotakmn2 {
+  background-image: url(../img/bwig.jpg);
+}
+.kotakmn2:hover {
+  background-image: url(../img/bgig.jpg);
+  transform: scale(1.05);
+}
+.kotakmn3 {
+  background-image: url(../img/bwyt.jpg);
+}
+.kotakmn3:hover {
+  background-image: url(../img/bgyt.jpg);
+  transform: scale(1.05);
+}
+.kotakmn4 {
+  background-color: #fff;
+}
+.kotakmn4:hover {
+  /* background-image: url(../img/bgulm.jpg); */
+  transform: scale(1.05);
+}
+.kotakmn4 h4 {
+  margin: 10px 0;
+  color: #000;
+}
+
+.kotakmn img,
+.kotakmn2 img,
+.kotakmn3 img,
+.kotakmn4 img,
+.kotakmn5 img {
   width: auto;
   height: 100px;
   margin: 10px;
 }
 
 .kotakmn h4,
-h6 {
+.kotakmn2 h4,
+.kotakmn3 h4,
+.kotakmn5 h4,
+.kotakmn h6,
+.kotakmn2 h6,
+.kotakmn3 h6,
+.kotakmn4 h6,
+.kotakmn5 h6 {
   margin: 10px 0;
   color: #fff;
 }
 
-.kotakmn button {
+.kotakmn button,
+.kotakmn2 button,
+.kotakmn3 button,
+.kotakmn4 button,
+.kotakmn5 button {
   padding: 5px 20px;
   background-color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s ease-in-out all; /* Mengganti ms menjadi s */
 }
 
-.kotakmn button:hover {
-  background-color: lightgray;
+.kotakmn button:hover,
+.kotakmn2 button:hover,
+.kotakmn3 button:hover,
+.kotakmn4 button:hover,
+.kotakmn5 button:hover {
+  background-color: #6b75ad;
 }
 
 .feature-block p {
@@ -306,7 +360,7 @@ h6 {
 /* Tentang */
 #tentang {
   display: inline-block;
-
+  padding: 0px;
   /* margin-bottom: 0px; */
   background-image: url(../img/bghome3.jpg);
   background-size: cover;
@@ -411,36 +465,6 @@ h3 {
   font-size: 20px !important;
 }
 
-.carousel {
-  margin-top: 40px;
-  padding: 10px;
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  gap: 20px;
-  height: max-content;
-  border: red 2px solid;
-}
-
-.carousel-item {
-  scroll-snap-align: start;
-  height: 40px;
-  min-width: 300px;
-  background-color: blueviolet;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.carousel-item img {
-  width: 40px;
-  height: auto;
-  object-fit: cover;
-}
-
-.carousel-item:hover {
-  transform: scale(1.05);
-}
 /* RESPONSIVE */
 @media (max-width: 600px) {
   .keluar-btn a {
@@ -482,7 +506,7 @@ h3 {
   #menu {
     /* height: 100%; */
 
-    background-image: url(../img/bgres1.jpg);
+    background-image: url(../img/bgres2.jpg);
     background-size: cover;
     /* display: none; */
   }
@@ -525,7 +549,104 @@ h3 {
     width: auto;
     margin: 0px 10px;
   }
+
+  #commentSection {
+    flex-direction: column; /* Ubah tata letak menjadi kolom */
+    height: auto; /* Sesuaikan tinggi untuk perangkat kecil */
+    border: none !important;
+  }
+
+  #commentForm {
+    max-width: 100%; /* Form lebar penuh pada layar kecil */
+    margin-right: 0; /* Hapus margin di sebelah kanan */
+    margin-bottom: 10px; /* Tambahkan margin bawah untuk jarak dari commentsDisplay */
+  }
+
+  #commentsDisplay {
+    max-width: 100%; /* Komentar juga lebar penuh pada layar kecil */
+    height: auto; /* Tinggi disesuaikan secara otomatis */
+  }
 }
+
 #map {
   width: 100%;
+}
+
+#commentSection {
+  display: flex; /* Atur elemen anak agar berjajar secara horizontal */
+  justify-content: space-between; /* Berikan ruang antara form dan komentar */
+  align-items: flex-start; /* Pastikan form dan komentar sejajar di bagian atas */
+  width: 80%;
+  height: 500px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background: transparent;
+  backdrop-filter: blur(6px);
+}
+
+#commentForm {
+  display: flex;
+  flex-direction: column; /* Elemen di dalam form tetap vertikal */
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px; /* Batas lebar form */
+  margin-right: 10px; /* Spasi antara form dan commentsDisplay */
+}
+
+#nameInput,
+#messageInput {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#messageInput {
+  height: 60px;
+  resize: none;
+}
+
+#commentForm button {
+  background-color: #6b75ad;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#commentForm button:hover {
+  background-color: #575fa9;
+}
+
+#commentsDisplay {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-y: auto;
+  width: 100%; /* Buat komentar menyesuaikan sisa ruang */
+  max-width: 600px; /* Batasan lebar maksimal komentar */
+  height: 100%; /* Isi tinggi section */
+}
+.timestamp {
+  color: #fff;
+}
+.bgcomment {
+  padding: 10px;
+  border-radius: 8px;
+  border-top: 2px #eee solid;
+  border-bottom: 2px #eee solid;
+}
+.comment {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.4);
 }
