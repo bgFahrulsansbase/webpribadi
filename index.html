@@ -77,7 +77,7 @@
               <li>
                 <a class="nav-link scrollto" href="#tentang">
                   <i class="bi bi-person-lines-fill"></i>
-                  Profile</a
+                  Forum</a
                 >
               </li>
             </ul>
@@ -112,7 +112,7 @@
               <div class="btn-mulai" title="">See more</div>
             </a>
             <a href="#tentang">
-              <div class="btn-mulai" title="">About me</div>
+              <div class="btn-mulai" title="">Message</div>
             </a>
           </div>
           <div class="carousel-item">
@@ -131,50 +131,40 @@
         <div class="kotakmn">
           <img src="assets/img/logoulm.png" alt="Project 1" />
           <h4>Study</h4>
-
-          <a href="https://ulm.ac.id/id/"> <button>Open</button></a>
+          <h6>Computer Edu.</h6>
+          <a href="https://ulm.ac.id/id/"> <button>Buka</button></a>
         </div>
 
-        <div class="kotakmn">
+        <div class="kotakmn2">
           <img src="assets/img/ig.png" alt="Project 1" />
 
           <h4>Instagram</h4>
-
-          <a href="https://www.instagram.com/2fhrl/"> <button>Open</button></a>
+          <h6>2fhrl</h6>
+          <a href="https://www.instagram.com/2fhrl/"> <button>Buka</button></a>
         </div>
-        <div class="kotakmn">
+        <div class="kotakmn3">
           <img src="assets/img/yt.png" alt="Project 1" />
 
           <h4>Youtube</h4>
-
+          <h6>fahrulikhsanhidayatullah</h6>
           <a
             href="https://youtube.com/@fahrulikhsanhidayatullah?si=qifvb0AomNeQNUn_"
           >
-            <button>Open</button></a
+            <button>Buka</button></a
           >
         </div>
 
-        <div class="kotakmn">
+        <div class="kotakmn4">
           <img src="assets/img/github.png" alt="Project 1" />
 
           <h4>Github</h4>
 
-          <a href="#menu"><button>Open</button></a>
+          <a href="#menu"><button>Buka</button></a>
         </div>
-        <div class="kotakmn">
+        <div class="kotakmn5">
           <h4>Coming soon</h4>
 
-          <a href="#menu"><button>Open</button></a>
-        </div>
-        <div class="kotakmn">
-          <h4>Coming soon</h4>
-
-          <a href="#menu"><button>Open</button></a>
-        </div>
-        <div class="kotakmn">
-          <h4>Coming soon</h4>
-
-          <a href="#menu"><button>Open</button></a>
+          <a href="#menu"><button>Buka</button></a>
         </div>
       </div>
     </section>
@@ -183,22 +173,21 @@
     <section id="tentang" class="padd-section text-center">
       <div class="container" data-aos="fade-up">
         <div class="aboutme">
-          <h1>Fahrul Ikhsan Hidayatullah</h1>
+          <div id="commentSection">
+            <form id="commentForm">
+              <input type="text" id="nameInput" placeholder="Nama" required />
+              <textarea
+                id="messageInput"
+                placeholder="Pesan"
+                required
+              ></textarea>
+              <button type="submit">Kirim Pesan</button>
+            </form>
 
-          <!-- <div class="menu-tombol">
-            <div class="instagram">
-              <a href="https://www.instagram.com/2fhrl/">
-                <button>Instagram</button></a
-              >
+            <div id="commentsDisplay">
+              <!-- Komentar akan ditampilkan di sini -->
             </div>
-            <div class="youtube">
-              <a
-                href="https://youtube.com/@fahrulikhsanhidayatullah?si=qifvb0AomNeQNUn_"
-              >
-                <button>Youtube</button></a
-              >
-            </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </section>
@@ -342,6 +331,107 @@
       // Menambahkan marker di Indonesia
       var marker = L.marker([-2.0, 118.0]).addTo(map);
       marker.bindPopup("<b>Indonesia</b><br>").openPopup();
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        push,
+        set,
+        onValue,
+        orderByChild,
+        query,
+      } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAJ3xEFNCiJn9B9vlr5wxSlFuDxmFPfke0",
+        authDomain: "webpribadi-2fe47.firebaseapp.com",
+        databaseURL: "https://webpribadi-2fe47-default-rtdb.firebaseio.com",
+        projectId: "webpribadi-2fe47",
+        storageBucket: "webpribadi-2fe47.appspot.com",
+        messagingSenderId: "818239815637",
+        appId: "1:818239815637:web:eea1245da8394444f3875c",
+        measurementId: "G-WWMQDJ5BSN",
+      };
+
+      // Inisialisasi Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+
+      // Mendapatkan referensi ke form dan kolom input
+      const commentForm = document.getElementById("commentForm");
+      const nameInput = document.getElementById("nameInput");
+      const messageInput = document.getElementById("messageInput");
+      const commentsDisplay = document.getElementById("commentsDisplay");
+
+      // Fungsi untuk menyimpan komentar ke Firebase
+      commentForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = nameInput.value;
+        const message = messageInput.value;
+
+        if (name && message) {
+          // Simpan ke Firebase dengan timestamp
+          const newCommentRef = push(ref(database, "comments"));
+          set(newCommentRef, {
+            name: name,
+            message: message,
+            timestamp: Date.now(),
+          }).then(() => {
+            // Tampilkan pop-up SweetAlert
+            Swal.fire({
+              icon: "success",
+              title: "Berhasil!",
+              text: "Pesan Anda telah terkirim!",
+              showConfirmButton: false,
+              timer: 2000,
+            });
+
+            // Reset form
+            nameInput.value = "";
+            messageInput.value = "";
+          });
+        }
+      });
+
+      // Fungsi untuk mengonversi timestamp menjadi format tanggal yang lebih ramah
+      function formatTimestamp(timestamp) {
+        const date = new Date(timestamp);
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0"); // Bulan dimulai dari 0
+        const year = date.getFullYear();
+        const hours = String(date.getHours()).padStart(2, "0");
+        const minutes = String(date.getMinutes()).padStart(2, "0");
+
+        return `${day}/${month}/${year} ${hours}:${minutes}`;
+      }
+
+      // Fungsi untuk mengambil dan menampilkan komentar dari Firebase
+      const commentsRef = query(
+        ref(database, "comments"),
+        orderByChild("timestamp")
+      );
+      onValue(commentsRef, (snapshot) => {
+        commentsDisplay.innerHTML = ""; // Hapus komentar yang sudah ada
+        const comments = [];
+        snapshot.forEach((childSnapshot) => {
+          const comment = childSnapshot.val();
+          const formattedTime = formatTimestamp(comment.timestamp);
+          comments.unshift(
+            `<div class="timestamp">${formattedTime}</div>
+       <div class="comment"> <strong>${comment.name}:</strong> ${comment.message} 
+        
+      </div>`
+          );
+        });
+        commentsDisplay.innerHTML = comments.join("");
+      });
     </script>
   </body>
 </html>
